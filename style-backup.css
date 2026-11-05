@@ -1,0 +1,118 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #eef2f5;
+  color: #222;
+}
+
+.top {
+  background: #075e54;
+  color: white;
+  text-align: center;
+  padding: 22px 12px;
+}
+
+.top h1 {
+  margin: 0;
+  font-size: 30px;
+}
+
+.top p {
+  margin-bottom: 0;
+}
+
+.container {
+  width: 92%;
+  max-width: 480px;
+  margin: 28px auto;
+}
+
+.card {
+  background: white;
+  padding: 22px;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px #00000012;
+}
+
+.card h2 {
+  color: #075e54;
+}
+
+input {
+  width: 100%;
+  padding: 14px;
+  margin: 8px 0;
+  border: 1px solid #ccd2d5;
+  border-radius: 9px;
+  font-size: 16px;
+}
+
+button {
+  border: 0;
+  background: #128c7e;
+  color: white;
+  padding: 13px 18px;
+  border-radius: 9px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+form button {
+  width: 100%;
+  margin-top: 10px;
+}
+
+a {
+  color: #075e54;
+  font-weight: bold;
+}
+
+.hidden {
+  display: none;
+}
+
+#notice, #regNotice {
+  color: #075e54;
+  overflow-wrap: anywhere;
+}
+
+.chatbox {
+  min-height: 200px;
+  max-height: 360px;
+  overflow-y: auto;
+  background: #f4f7f6;
+  padding: 12px;
+  border-radius: 10px;
+  margin: 15px 0;
+}
+
+.bubble {
+  background: #d9fdd3;
+  padding: 12px;
+  border-radius: 10px;
+  overflow-wrap: anywhere;
+}
+
+.send {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.send input {
+  min-width: 0;
+}
+
+.send button {
+  margin-top: 0;
+}
+
+.secondary {
+  width: 100%;
+  margin-top: 14px;
+  background: #555;
+}

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#075e54">
+<title>MyChat</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header">
+  <div>
+    <h1>MyChat 💬</h1>
+    <p>Connect with your friends</p>
+  </div>
+  <button id="headerProfile" class="round-btn" aria-label="Profile">👤</button>
+</header>
+
+<main id="authPage" class="auth-page">
+  <section class="auth-card">
+    <div class="logo">💬</div>
+    <h2 id="authTitle">Welcome Back!</h2>
+    <p id="authSubtitle">Login to continue to MyChat</p>
+
+    <form id="loginForm">
+      <label for="loginEmail">Email</label>
+      <input id="loginEmail" type="email" placeholder="you@example.com" required>
+
+      <label for="loginPassword">Password</label>
+      <input id="loginPassword" type="password" placeholder="Enter password" required>
+
+      <button class="primary-btn" type="submit">Login</button>
+    </form>
+
+    <form id="registerForm" class="hidden">
+      <label for="registerName">Full name</label>
+      <input id="registerName" type="text" placeholder="Your name" required>
+
+      <label for="registerEmail">Email</label>
+      <input id="registerEmail" type="email" placeholder="you@example.com" required>
+
+      <label for="registerPassword">Password</label>
+      <input id="registerPassword" type="password" placeholder="At least 6 characters" minlength="6" required>
+
+      <button class="primary-btn" type="submit">Create account</button>
+    </form>
+
+    <p id="authNotice" class="notice" role="status"></p>
+    <p id="authSwitch">New to MyChat? <button id="showRegister" class="text-btn" type="button">Create account</button></p>
+    <p class="demo-note">Demo mode: accounts are stored only on this device.</p>
+  </section>
+</main>
+
+<main id="homePage" class="page hidden">
+  <div class="page-heading">
+    <div>
+      <h2>Your Chats</h2>
+      <p>Stay close to your people</p>
+    </div>
+    <button id="newChatBtn" class="new-chat-btn">＋ New</button>
+  </div>
+
+  <div class="search-box">
+    <span>🔎</span>
+    <input id="searchInput" type="search" placeholder="Search conversations...">
+  </div>
+
+  <div class="tabs">
+    <button class="tab active" data-filter="all">All</button>
+    <button class="tab" data-filter="unread">Unread</button>
+  </div>
+
+  <section id="chatList" class="chat-list"></section>
+  <p id="emptyChats" class="empty hidden">No conversations found.</p>
+</main>
+
+<main id="conversationPage" class="conversation hidden">
+  <div class="conversation-header">
+    <button id="backBtn" class="round-btn" aria-label="Back">←</button>
+    <div id="conversationAvatar" class="avatar green">A</div>
+    <div class="person-details">
+      <strong id="conversationName">Friend</strong>
+      <small>MyChat conversation</small>
+    </div>
+    <button id="chatMenuBtn" class="round-btn" aria-label="Chat options">⋮</button>
+  </div>
+
+  <div id="messages" class="messages"></div>
+
+  <form id="messageForm" class="message-form">
+    <input id="messageInput" type="text" placeholder="Write a message..." autocomplete="off" required>
+    <button type="submit" aria-label="Send">➤</button>
+  </form>
+  <p class="demo-note">Demo only — messages stay on this device.</p>
+</main>
+
+<main id="profilePage" class="page hidden">
+  <button class="back-link" data-page="home">← Back</button>
+  <section class="profile-card">
+    <div id="profileAvatar" class="profile-avatar">👤</div>
+    <h2 id="profileName">MyChat User</h2>
+    <p id="profileEmail">user@example.com</p>
+    <button id="editProfileBtn" class="primary-btn">Edit profile</button>
+  </section>
+  <section class="settings-card">
+    <h3>Account</h3>
+    <button class="setting-row" id="editNameSetting"><span>👤 Edit name</span><span>›</span></button>
+    <button class="setting-row" data-page="settings"><span>⚙️ Settings</span><span>›</span></button>
+    <button class="setting-row" id="logoutBtn"><span>🚪 Log out</span><span>›</span></button>
+  </section>
+</main>
+
+<main id="settingsPage" class="page hidden">
+  <button class="back-link" data-page="profile">← Back to profile</button>
+  <h2>Settings</h2>
+  <section class="settings-card">
+    <div class="setting-row">
+      <span>🌙 Dark mode</span>
+      <input id="darkModeToggle" type="checkbox" aria-label="Toggle dark mode">
+    </div>
+    <div class="setting-row">
+      <span>🔔 Notifications</span>
+      <span class="muted">Coming soon</span>
+    </div>
+    <div class="setting-row">
+      <span>🔒 Privacy</span>
+      <span class="muted">Coming soon</span>
+    </div>
+    <div class="setting-row">
+      <span>ℹ️ App version</span>
+      <span class="muted">0.3 Demo</span>
+    </div>
+  </section>
+  <p class="demo-note">Some settings require the real backend and will be added later.</p>
+</main>
+
+<nav id="bottomNav" class="bottom-nav hidden">
+  <button class="nav-item selected" data-page="home">💬<span>Chats</span></button>
+  <button class="nav-item" data-page="profile">👤<span>Profile</span></button>
+  <button class="nav-item" data-page="settings">⚙️<span>Settings</span></button>
+</nav>
+
+<div id="modal" class="modal hidden">
+  <section class="modal-card">
+    <h3 id="modalTitle">New chat</h3>
+    <p id="modalText">Enter a contact name to create a local demo chat.</p>
+    <form id="modalForm">
+      <input id="modalInput" placeholder="Contact name" required>
+      <div class="modal-actions">
+        <button id="modalCancel" type="button" class="secondary-btn">Cancel</button>
+        <button type="submit" class="primary-btn">Continue</button>
+      </div>
+    </form>
+  </section>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

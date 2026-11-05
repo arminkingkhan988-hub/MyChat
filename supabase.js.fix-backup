@@ -1,0 +1,14 @@
+import { createClient } from "https://esm.sh/@supabase/supabase-js@2.118.0";
+import { auth } from "./firebase.js";
+
+const SUPABASE_URL = "https://hwefxyjfuqxmjdnppdly.supabase.co";const SUPABASE_PUBLISHABLE_KEY = "YOUR_EXISTING_PUBLISHABLE_KEY";
+
+export const supabase = createClient(
+  SUPABASE_URL,
+sb_publishable_0I7CT2PTlXaDdh44jdH1wg_Rbo-oMpd
+  {
+    accessToken: async () => {
+      const user = auth.currentUser;
+      return user ? await user.getIdToken() : null;
+    }
+  }

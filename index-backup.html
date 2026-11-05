@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MyChat</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <h1>MyChat 💬</h1>
+  <p>Chat with your friends</p>
+</header>
+
+<main class="container">
+  <section id="login" class="card">
+    <h2>Welcome Back!</h2>
+    <p>Login to continue</p>
+    <form id="loginForm">
+      <input id="email" type="email" placeholder="Email address" required>
+      <input id="password" type="password" placeholder="Password" required>
+      <button type="submit">Login</button>
+    </form>
+    <p id="notice"></p>
+    <p>Don't have an account? <a href="#" id="showRegister">Register</a></p>
+  </section>
+
+  <section id="register" class="card hidden">
+    <h2>Create Account</h2>
+    <form id="registerForm">
+      <input id="name" type="text" placeholder="Your name" required>
+      <input id="regEmail" type="email" placeholder="Email address" required>
+      <input id="regPassword" type="password" placeholder="Create password" minlength="6" required>
+      <button type="submit">Register</button>
+    </form>
+    <p id="regNotice"></p>
+    <p>Already registered? <a href="#" id="showLogin">Login</a></p>
+  </section>
+
+  <section id="chat" class="card hidden">
+    <h2 id="welcome"></h2>
+    <div class="chatbox" id="messages">
+      <p class="bubble">Welcome to MyChat! 👋</p>
+    </div>
+    <form id="messageForm" class="send">
+      <input id="messageInput" type="text" placeholder="Write a message..." required>
+      <button type="submit">Send</button>
+    </form>
+    <button id="logout" class="secondary">Logout</button>
+  </section>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
